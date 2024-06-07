@@ -4,7 +4,7 @@
 ### 위젯 생명주기
 - StatelessWidget : 상태가 없는 위젯. 생성자가 실행되어서 build 함수 실행.
 - StatefulWidget : 위젯 클래스와 스테이트 클래스 2개로 구성.
- 
+ ![alt text](image.png)
 - 상태변경이 없는 생명주기 화면에 나타나면서 생성, 사라지면서 삭제.
   1. StatefulWidget 생성자로 createState() 함수실행
   2. initState() State가 생성되는 한번만 실행
