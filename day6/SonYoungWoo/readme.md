@@ -4,7 +4,7 @@
 ### 위젯 생명주기
 - StatelessWidget : 상태가 없는 위젯. 생성자가 실행되어서 build 함수 실행.
 - StatefulWidget : 위젯 클래스와 스테이트 클래스 2개로 구성. 
-  상태변경이 없는 생명주기 화면에 나타나면서 생성, 사라지면서 삭제.
+- 상태변경이 없는 생명주기 화면에 나타나면서 생성, 사라지면서 삭제.
   1. StatefulWidget 생성자로 createState() 함수실행
   2. initState() State가 생성되는 한번만 실행
   3. didChangeDependencies() State가 의존하는 값이 변경되면 재실행
@@ -13,13 +13,13 @@
   6. build가완료되면 clean 상태로 변경(화면유지)
   7. 위젯이 일시적 혹은 영구적 상제될때 deactivate() 실행
   8. 완전이 삭제될때 dispose() 실행
- 매개변수가 변경되었을때 생명주기
+- 매개변수가 변경되었을때 생명주기
   1. StatefulWidget 생성자 실행
   2. State의 didUpdateWidget 함수 실행
   3. State 상태 dirty 로 변경
   4. 상태가 dirty 면 build 실행해서 UI가 반영
   5. build가완료되면 clean 상태로 변경(화면유지)
- State 자재적으로 build를 재실행 할때 생명주기
+- State 자재적으로 build를 재실행 할때 생명주기
   1. setState() 함수실행
   2. State 상태 dirty 로 변경
   3. State 상태 dirty 로 변경
