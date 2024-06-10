@@ -43,15 +43,15 @@
         - asset/img/
 
       fonts:
-        - family: parisienne  # ➊ family 키에 폰트 이름을 지정할 수 있습니다.
+        - family: parisienne  # family 키에 폰트 이름을 지정할 수 있습니다.
           fonts:
-            - asset: asset/font/Parisienne-Regular.ttf  # ➋ 등록할 폰트 파일의 위치
+            - asset: asset/font/Parisienne-Regular.ttf  # 등록할 폰트 파일의 위치
 
         - family: sunflower
           fonts:
             - asset: asset/font/Sunflower-Light.ttf
             - asset: asset/font/Sunflower-Medium.ttf
-              weight: 500  # ➌ 폰트의 두께. FontWeight 클래스의 값과 같습니다.
+              weight: 500  # 폰트의 두께. FontWeight 클래스의 값과 같습니다.
             - asset: asset/font/Sunflower-Bold.ttf
               weight: 700
     ```
@@ -114,7 +114,6 @@
     children: [
             _DDay(
 
-              // ➎ 하트 눌렀을때 실행할 함수 전달하기
               onHeartPressed: onHeartPressed,
               firstDay: firstDay,
             ),
@@ -122,19 +121,18 @@
           ],
     ```  
     ```dart
-    void onHeartPressed(){  // ➍ 하트 눌렀을때 실행할 함수
+    void onHeartPressed(){  
     ```   
     ```dart
     final GestureTapCallback onHeartPressed;
     final DateTime firstDay;
 
     _DDay({
-      required this.onHeartPressed,  // ➋ 상위에서 함수 입력받기
+      required this.onHeartPressed,  
       required this.firstDay,
     });
 
     IconButton(
-          // 하트 아이콘 버튼
           iconSize: 60.0,
           onPressed: onHeartPressed,
     ``` 
