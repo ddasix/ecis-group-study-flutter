@@ -27,3 +27,14 @@
     1. `setState()`를 통해 `Widget`이 `dirty` 상태임을 알림.
     2. `Widget`이 `dirty` 상태로 변경 됐기 때문에 다시 `build()`되고 `dirty` 상태를 `clean` 상태로 변경 됨.
     3. `Widget`이 대기상태가 됨.
+
+## 실습
+1. app 생성
+2. `pubspec.yaml`에 assets 추가
+3. `StatelessWidget`으로 `screens/home_screen.dart` 생성 후 `PageView` Widget 추가
+4. `[1,2,3,4,5]`로 `PageView` 구현
+    - children items: `Image.asset`
+    - fit: `BoxFit.cover`
+5. `StatfuleWidget`으로 변경
+6. 상태바 색상 변경
+
