@@ -223,7 +223,7 @@
   - lib/screen/root_screen.dart
     ```dart
     class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{
-      TabController? controller;  // 사용할 TabController 선언
+      TabController? controller;
       double threshold = 2.7;
       int number = 1;
       ShakeDetector? shakeDetector;
@@ -243,11 +243,10 @@
       setState(() {});
     }
     ```
-    ```dart
-    // listener에 등록한 함수 등록 취소
+    ```dart    
     @override
     dispose(){
-      controller!.removeListener(tabListener); 
+      controller!.removeListener(tabListener);  // listener에 등록한 함수 등록 취소
       shakeDetector!.stopListening();
       super.dispose();
     }
