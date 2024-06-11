@@ -217,7 +217,7 @@
 ![alt text](image8.png)
 ![alt text](image9.png)
 
-- 탭을 눌러서 화면 전환 
+- 화면이 바꼈을때 탭 전환 
   - addListner 콜백함수로 탭이 바뀌면 setState() 호출 -> build() 재실행
   - animateTo() 함수를 사용해서 자연스러운 애니메이션으로 탭 전환한다
   - lib/screen/root_screen.dart
@@ -251,6 +251,7 @@
       super.dispose();
     }
     ```
+- 탭을 눌렀을때 tabBarView 와 동기화
     ```dart
     BottomNavigationBar renderBottomNavigation() {
       return BottomNavigationBar(
