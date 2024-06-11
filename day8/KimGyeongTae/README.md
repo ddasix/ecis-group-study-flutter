@@ -150,7 +150,7 @@
             children: renderChildren(),
         ),
     ```
-  - 샘플 `tab 1`, `tab 2` 탭을 구현
+  - `tab 1`, `tab 2` 탭을 구현
     ```dart
     List<Widget> renderChildren(){
       return [
