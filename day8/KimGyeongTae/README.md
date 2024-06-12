@@ -130,7 +130,7 @@
 
 - TabBarView 구현
   - TabController 가 필수로 필요하다
-  - TickerPrividerMixin 의 vsync 를 사용하여 TabController 초기화
+  - TickerProviderMixin 의 vsync 를 사용하여 TabController 초기화
     - TickerProviderMixin 은 애니메이션의 효율을 올려주는 역할
      ```dart
     class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ // mixin 선언
