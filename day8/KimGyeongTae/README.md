@@ -139,7 +139,7 @@
         @override
         void initState() {
             super.initState();
-            controller = TabController(length: 2, vsync: this);     // 컨트롤러 등록       
+            controller = TabController(length: 2, vsync: this);     // 컨트롤러 초기화       
         }
     
     @override
