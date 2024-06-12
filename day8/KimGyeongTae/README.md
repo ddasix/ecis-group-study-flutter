@@ -146,7 +146,7 @@
     Widget build(BuildContext context) {
         return Scaffold(
         body: TabBarView(
-            controller: controller,     //컨트롤러 등록
+            controller: controller,     // Scaffold 에 컨트롤러 등록
             children: renderChildren(),
         ),
     ```
