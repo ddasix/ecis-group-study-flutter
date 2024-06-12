@@ -37,6 +37,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   }
 
   void tabListener() {
+    print('tabListener');
     setState(() {});
   }
 
@@ -57,6 +58,7 @@ class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin {
   @override
   void dispose() {
     controller.removeListener(tabListener);
+    controller.dispose();
     shakeDetector.stopListening();
 
     super.dispose();
