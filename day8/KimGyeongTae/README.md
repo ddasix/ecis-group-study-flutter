@@ -243,15 +243,6 @@
       setState(() {});
     }
     ```
-    ```dart    
-    @override
-    dispose(){
-      controller!.removeListener(tabListener);  // listener에 등록한 함수 등록 취소
-      shakeDetector!.stopListening();
-      super.dispose();
-    }
-    ```
-- 탭을 눌렀을때 tabBarView 와 동기화
     ```dart
     BottomNavigationBar renderBottomNavigation() {
       return BottomNavigationBar(
@@ -261,6 +252,14 @@
             controller!.animateTo(index); // 탭을 눌렀을 때 TabBarView 와 화면을 동기화
           });
         },
+    ```
+    ```dart    
+    @override
+    dispose(){
+      controller!.removeListener(tabListener);  // listener에 등록한 함수 등록 취소
+      shakeDetector!.stopListening();
+      super.dispose();
+    }
     ```
   #### 11.4.2 HomeScreen 위젯 구현하기
 - 주사위와 행운의 숫자 글씨 구현
