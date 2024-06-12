@@ -218,7 +218,7 @@
 ![alt text](image9.png)
 
 - 화면이 바꼈을때 탭 전환 
-  - addListner 콜백함수로 탭이 바뀌면 setState() 호출 -> build() 재실행
+  - addListner 의 콜백함수로 탭이 바뀌면 setState() 호출 -> build() 재실행
   - animateTo() 함수를 사용해서 자연스러운 애니메이션으로 탭 전환한다
   - lib/screen/root_screen.dart
     ```dart
