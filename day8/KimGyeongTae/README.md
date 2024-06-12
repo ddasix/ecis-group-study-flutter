@@ -133,7 +133,7 @@
   - TickerPrividerMixin 의 vsync 를 사용하여 TabController 초기화
     - TickerProviderMixin 은 애니메이션의 효율을 올려주는 역할
      ```dart
-    class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{
+    class _RootScreenState extends State<RootScreen> with TickerProviderStateMixin{ // mixin 선언
         TabController? controller;  // 사용할 TabController 선언
         
         @override
