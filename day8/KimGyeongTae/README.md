@@ -115,7 +115,7 @@
 ![alt text](image7.png)
 ### 11.4 구현하기
 #### 11.4.1 RootScreen 위젯 구현하기
-- screen 폴더 밑에 rootScreen.dart 생성
+- screen 폴더 밑에 root_screen.dart 생성
 - main.dart 파일에 홈 화면을 RootScreen 위젯으로 변경
    ```dart
     void main() {
