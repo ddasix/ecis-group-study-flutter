@@ -1,12 +1,23 @@
-#동영상 플레이어
+# 동영상 플레이어
+## 학습 목표
+- 동영상 앱 구현
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
 
 ## 사전지식
+### 에뮬레이터 화면 회전
 ### 시간 변환 및 String 패딩
 - Duration 클래스
     - DateTime과 다르게 기간을 표현할 수 있는 클래스
 - video_player 플러그인 사용
     - 영상 위치, 총 길이 등을 Duration 클래스로 반환
     - 가독성이 좋도록 String 값으로 전환
+- sublist : 리스트의 일부를 추출하여 새로운 리스트 만듦
+    - 시작(선택) 인덱스와 끝 인덱스 기반, 끝 인덱스 미포함
+- padLeft, padRight: String의 길이를 맞춰주는 역할
+    - 첫번째 매개변수 : String의 최소 길이, 두번째 : 채워줄 String 값
 
 ```dart
 import 'package:intl/intl.dart';
@@ -20,7 +31,8 @@ void main() {
 
   print(duration.toString().split('.')[0].split(':').sublist(1, 3).join(':'));
   // 첫번째 값을 다시 : 으로 나누고 인덱스 1~2 까지 가져와 합친 값
-
+  // sublist: 리스트의 일부를 추출하여 새로운 리스트 만듦
+  //   - 시작(선택) 인덱스와 끝 인덱스 기반, 끝 인덱스 미포함
   print(
       '${duration.inMinutes.toString().padLeft(2, '0')}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}');
   //해당 시간의 분과 : 분을 뺀 초를 표시
