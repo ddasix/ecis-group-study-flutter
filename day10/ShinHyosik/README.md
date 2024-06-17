@@ -31,20 +31,20 @@
     |---|:---:|:---:|
     |제공여부|❌|✅|
 
-4. [네비게이터](https://api.flutter.dev/flutter/widgets/Navigator-class.html)
+### [네비게이터](https://api.flutter.dev/flutter/widgets/Navigator-class.html)
 
-    - `Flutter`에서 화면 이동 클래스
-    - `LIFO Stack`구조로 되어 있음  
-        ![alt text](image-1.png)
-    - Navigator의 Methods
-        |메서드|설명|
-        |---|---|
-        |push|새로운화면추가|
-        |pushReplacement|새로운화면을 추가하면서 바로아래 화면을 삭제함|
-        |pushAndRemoveUntil|새로운 화면을 추가하면서 아래화면 모두 삭제함|
-        |pop|현재화면을 삭제함|
-        |maybePop|스텍의 마지막이 아닐때만 pop을 실행함|
-        |popUntil|스텍에 존재하는 화면으로 이동하면서 중간의 화면 모두 삭제|
+- `Flutter`에서 화면 이동 클래스
+- `LIFO Stack`구조로 되어 있음  
+    ![alt text](image-1.png)
+- Navigator의 Methods
+    |메서드|설명|
+    |---|---|
+    |push|새로운화면추가|
+    |pushReplacement|새로운화면을 추가하면서 바로아래 화면을 삭제함|
+    |pushAndRemoveUntil|새로운 화면을 추가하면서 아래화면 모두 삭제함|
+    |pop|현재화면을 삭제함|
+    |maybePop|스텍의 마지막이 아닐때만 pop을 실행함|
+    |popUntil|스텍에 존재하는 화면으로 이동하면서 중간의 화면 모두 삭제|
 
 ## 실습
 
