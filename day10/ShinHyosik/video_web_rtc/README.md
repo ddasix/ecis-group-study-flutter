@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## `.env` 파일 생성
+```bash
+APP_ID=AGORA_APP_ID
+CHANNEL_NAME=AGORA_CHANNEL_NAME
+TEMP_TOKEN=AGORA_TEMP_TOKEN
+```
