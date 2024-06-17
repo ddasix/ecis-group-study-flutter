@@ -1,6 +1,6 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
-import 'package:video_web_rtc/constants/const.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Widget renderSubView(otherUid, rtcEngine) {
   if (otherUid != null) {
@@ -8,7 +8,7 @@ Widget renderSubView(otherUid, rtcEngine) {
       controller: VideoViewController.remote(
         rtcEngine: rtcEngine,
         canvas: VideoCanvas(uid: otherUid),
-        connection: RtcConnection(channelId: CHANNEL_NAME),
+        connection: RtcConnection(channelId: dotenv.env['CHANNEL_NAME']),
       ),
     );
   } else {

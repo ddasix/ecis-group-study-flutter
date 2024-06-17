@@ -1,7 +1,7 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:video_web_rtc/constants/const.dart';
 
 import '../components/components.dart';
 
@@ -30,7 +30,7 @@ class _CamScreenState extends State<CamScreen> {
 
       await rtcEngine!.initialize(
         RtcEngineContext(
-          appId: APP_ID,
+          appId: dotenv.env['APP_ID']!,
           channelProfile: ChannelProfileType.channelProfileLiveBroadcasting,
         ),
       );
@@ -70,8 +70,8 @@ class _CamScreenState extends State<CamScreen> {
       await rtcEngine!.enableVideo();
       await rtcEngine!.startPreview();
       await rtcEngine!.joinChannel(
-        token: TEMP_TOKEN,
-        channelId: CHANNEL_NAME,
+        token: dotenv.env['TEMP_TOKEN']!,
+        channelId: dotenv.env['CHANNEL_NAME']!,
         uid: 0,
         options: ChannelMediaOptions(),
       );
