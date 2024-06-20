@@ -224,3 +224,25 @@
 - currentContext.findRenderObject() : 화면 렌더링 RepaintBoundary 위젯을 찾는다
 - toByteData() 와 asUint8List() 를 이용해 이미지 정보를 바이트 8비트 정수형으로 변환
 - ImageGallerySaver 를 이용해서 저장
+    ```dart
+    GlobalKey imgKey = GlobalKey();
+
+    ....
+
+    void onSaveImage() async {
+        RenderRepaintBoundary boundary = imgKey.currentContext!
+            .findRenderObject() as RenderRepaintBoundary;
+        ui.Image image = await boundary.toImage(); // 바운더리를 이미지로 변경
+        // byte data 형태로 형태 변경
+        ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png); 
+        Uint8List pngBytes = byteData!.buffer.asUint8List(); // Unit8List 형태로 형태 변경
+
+        await ImageGallerySaver.saveImage(pngBytes, quality: 100);  // 이미지 저장하기
+
+        ScaffoldMessenger.of(context).showSnackBar(  // 저장 후 Snackbar 보여주기
+            const SnackBar(
+                content: Text('저장되었습니다!'),
+            ),
+        );
+    }
+    ```
