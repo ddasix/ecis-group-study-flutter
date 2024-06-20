@@ -116,7 +116,7 @@
     ```
 #### 15.4.4 Footer 구현하기
 - 이미지에 올릴 스티커를 고르는 창
-- SingleChildScrollView 을 사용하여 가로로 스크롤하도록 설정한다
+- SingleChildScrollView() : 가로로 스크롤
 - onEmoticonTap() : 스티커를 선택할 때 마다 실행한다
 - GestureDetector 의 onTap() 이 실행되면 onEmoticonTap() 을 호출한다
 - lib/component/footer.dart
