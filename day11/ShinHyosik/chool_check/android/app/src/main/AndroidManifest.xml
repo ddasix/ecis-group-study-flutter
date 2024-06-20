@@ -1,11 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    
     <application
         android:label="chool_check"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD3C9ogG3S4YBswfJDLUwNTzeYxsqd7lpQ"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD3C9ogG3S4YBswfJDLUwNTzeYxsqd7lpQ" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
