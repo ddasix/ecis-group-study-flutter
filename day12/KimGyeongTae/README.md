@@ -85,8 +85,8 @@
 #### 15.4.3 Body 구현하기
 - 화면 1 : [이미지 선택하기] 버튼을 화면 중앙에 보여준다
 - 화면 2 : 선택된 이미지를 화면에 보여준다
-- InteractiveViewer 를 사용해서 Image 를 확대하고 좌우로 이동할 수 있게 한다
-  - 이미지 확대 및 축소 : 윈도우에서 `Ctrl` 키 + 마우스 드래그
+  - InteractiveViewer 를 사용해서 Image 를 확대하고 좌우로 이동할 수 있게 한다
+    - 이미지 확대 및 축소 : 윈도우에서 `Ctrl` 키 + 마우스 드래그
 - lib/screen/home_screen.dart
     ```dart
     Widget renderBody() {
