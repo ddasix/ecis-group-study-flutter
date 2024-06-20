@@ -199,13 +199,13 @@
     ```dart
     void onEmoticonTap(int index) async {
         setState(() {
-        stickers = {
-            ...stickers,
-            StickerModel(
-            id: const Uuid().v4(), // 스티커의 고유 ID
-            imgPath: 'asset/img/emoticon_$index.png',
-            ),
-        };
+            stickers = {
+                ...stickers,
+                StickerModel(
+                id: const Uuid().v4(), // 스티커의 고유 ID
+                imgPath: 'asset/img/emoticon_$index.png',
+                ),
+            };
         });
     }
     ```
@@ -225,7 +225,13 @@
 - toByteData() 와 asUint8List() 를 이용해 이미지 정보를 바이트 8비트 정수형으로 변환
 - ImageGallerySaver 를 이용해서 저장
     ```dart
-    GlobalKey imgKey = GlobalKey();
+    GlobalKey imgKey = GlobalKey(); // 이미지로 전환할 위젯에 입력해줄 키값
+
+    Widget renderBody() {
+        if (image != null) {
+            return RepaintBoundary(
+                key: imgKey,  // 위젯을 이미지로 저장하기 위해 사용
+                child: Positioned.fill(
 
     ....
 
