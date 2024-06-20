@@ -61,9 +61,9 @@
 
 ### 15.4 구현하기
 #### 15.4.1 AppBar 구현하기
-- lib/component/main_app_bar.dart 생성
 - [이미지 선택], [스티커 삭제], [이미지 저장] 버튼 구현
 - 각 버튼에 onPressed 매개변수로 onPickImage, onDeleteItem, onSaveImage 선언
+- lib/component/main_app_bar.dart
 #### 15.4.2 Image 선택하기
 - image 변수에 선택한 이미지를 저장한다
 - ImagePicker 패키지의 pickImage() 를 이용하여 이미지 선택 창을 열어 선택한다
@@ -143,7 +143,6 @@
                             ),
     ```
 #### 15.4.5 EmoticonSticker 위젯 구현하기
-- lib/component/emoticon_sticker.dart 생성
 - 선택한 스티커를 이동하거나 크기를 변경했을 때 화면에 반영
 - onTransform() : 스티커의 상태가 변경될 때마다 실행
 - onScaleUpdate(ScaleUpdateDetails) : 스티커의 확대 비율이 변경됐을 때 실행
@@ -153,6 +152,7 @@
 - onScaleEnd() : 확대,축소가 끝나는 순간의 배율을 저장
 - isSelected 변수를 선언해서 어떤 스티커를 선택했는지 확인
 - transform 에 Matrix4.identity() 를 호출하여 변경된 위치, 배율 값을 반영
+- lib/component/emoticon_sticker.dart
 #### 15.4.6 스티커 붙이기
 - lib/model/sticker_model.dart 생성
 - StickerModel 생성
