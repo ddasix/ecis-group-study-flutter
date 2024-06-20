@@ -37,7 +37,7 @@
 - 안드로이드 권한 설정
   - 안드로이드 11 버전에 새로운 파일 저장소가 추가
   - 사용자의 핸드폰이 안드로이드 11 이전 버전이면 기존 저장소를 사용해야 한다
-  - requestLegacyExternalStorage 옵션을 true 로 설정
+    - requestLegacyExternalStorage 옵션을 true 로 설정
 
 ![alt text](15-4.png)
 
