@@ -29,7 +29,8 @@ import 'package:image_editor/component/footer.dart';
 import 'dart:io';
 import 'package:image_editor/component/emoticon_sticker.dart';
 import 'package:image_editor/model/sticker_model.dart';
-
+import 'package:uuid/uuid.dart';
+import 'package:flutter/rendering.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,7 +43,8 @@ class _HomeScreenState extends State<HomeScreen>{
 
   XFile? image;
   Set<StickerModel> stickers = {};
-  String? selected;
+  String? selectedId;
+  GlobalKey imgKey = GlobalKey();
 
   void onPickImage () async {
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -51,8 +53,15 @@ class _HomeScreenState extends State<HomeScreen>{
     });
   }
 
-  void onSaveImage(){}
-  void onDeleteImage(){}
+  void onSaveImage(){
+    RenderRepaintBoundary boundary = imgKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+  }
+
+  void onDeleteImage() async{
+    setState(() {
+      stickers = stickers.where((sticker) => sticker.id != selectedId).toSet();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,17 +93,35 @@ class _HomeScreenState extends State<HomeScreen>{
 
   Widget renderBody(){
     if(image != null){
-      return Positioned.fill(
+      return RepaintBoundary(
+
+        key: imgKey,
+        child: Positioned.fill(
           child: InteractiveViewer(
             child: Stack(
-              fit:  StackFit.expand,
+              fit: StackFit.expand,
               children: [
-                Image.file(File(image!.path)
+                Image.file(
+                  File(image!.path),
+                  fit: BoxFit.cover,
                 ),
-                fit: BoxFit.cover,
-            ],
+                ...stickers.map(
+                      (sticker) => Center(
+                    child: EmoticonSticker(
+                      key: ObjectKey(sticker.id),
+                      onTransform: () {
+                        onTransform(sticker.id);
+                      },
+                      imgPath: sticker.imgPath,
+                      isSelected: selectedId == sticker.id,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ));
+          ),
+        ),
+      );
     } else {
       return Center(
         child: TextButton(
@@ -106,7 +133,25 @@ class _HomeScreenState extends State<HomeScreen>{
 
   }
 
-  void onEmoticonTap (int index){}
+  void onTransform(String id){
+    setState(() {
+      selectedId = id;
+    });
+  }
+
+  void onEmoticonTap (int index) async{
+
+    setState(() {
+      stickers = {
+        ...stickers,
+        StickerModel(
+          id: Uuid().v4(),
+          imgPath: "asset/img/emoticon_$index.png"
+        )
+      };
+    });
+
+  }
 
 }
 
