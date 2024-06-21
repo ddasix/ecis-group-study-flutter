@@ -155,7 +155,7 @@
 - lib/component/emoticon_sticker.dart
 #### 15.4.6 스티커 붙이기
 - lib/model/sticker_model.dart 생성
-- StickerModel 생성
+- StickerModel class 생성 (n 개의 스티커를 붙여야 한다)
     ```dart
     class StickerModel {
         final String id;
