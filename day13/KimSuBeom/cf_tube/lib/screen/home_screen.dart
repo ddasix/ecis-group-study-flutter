@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         title: const Text(
           '코팩튜브',
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black,
       ),

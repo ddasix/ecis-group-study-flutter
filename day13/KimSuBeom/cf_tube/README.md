@@ -19,6 +19,7 @@
     - port
     - resource path : 요청 경로
     - query : 추가 전송 정보, map 형태
+
 ![alt text](image-1.png)
 
 - HTTP 헤더
@@ -110,12 +111,20 @@ youtube_player_flutter: 9.0.1
 dio: 5.4.3+1
 ```
 
+### 인터넷 권한 설정
+- android\app\src\main\AndroidManifest.xml
+```dart
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
 ## 레이아웃 구상
 - HomeScreen 단일 사용
     - AppBar
     - 동영상리스트
         - 동영상
         - 동영상 제목
+
+![alt text](image-9.png)
 
 ## 구현하기
 ### VideoModel 구현하기
