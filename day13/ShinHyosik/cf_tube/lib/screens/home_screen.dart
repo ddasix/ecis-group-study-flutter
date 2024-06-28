@@ -1,10 +1,6 @@
-import 'dart:io';
-
 import 'package:cf_tube/components/video_player.dart';
-import 'package:cf_tube/components/video_player_web.dart';
 import 'package:cf_tube/models/video_model.dart';
 import 'package:cf_tube/repositories/youtube_repository.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
