@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1048971246583",
+    "project_id": "calendar-scheduler-b05de",
+    "storage_bucket": "calendar-scheduler-b05de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048971246583:android:6835cd0933c65e705a0cf2",
+        "android_client_info": {
+          "package_name": "com.example.calendar_scheduler_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO0ayy71PwLcduSwdUc5FAzcqy-_1-xW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
