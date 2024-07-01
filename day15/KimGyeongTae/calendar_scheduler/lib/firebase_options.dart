@@ -41,48 +41,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAVpTyHHXkjaQ9fPDrUihMT-_BkKbfBHlI',
-    appId: '1:1048971246583:web:530179613b94c0145a0cf2',
-    messagingSenderId: '1048971246583',
-    projectId: 'calendar-scheduler-b05de',
-    authDomain: 'calendar-scheduler-b05de.firebaseapp.com',
-    storageBucket: 'calendar-scheduler-b05de.appspot.com',
-    measurementId: 'G-L0G2TG4WFZ',
+    삭제
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAO0ayy71PwLcduSwdUc5FAzcqy-_1-xW4',
-    appId: '1:1048971246583:android:6835cd0933c65e705a0cf2',
-    messagingSenderId: '1048971246583',
-    projectId: 'calendar-scheduler-b05de',
-    storageBucket: 'calendar-scheduler-b05de.appspot.com',
+    삭제
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB0aoiYqUGcHXj4QL4g4QfdL7MeqCvJM4g',
-    appId: '1:1048971246583:ios:a13038a3111411855a0cf2',
-    messagingSenderId: '1048971246583',
-    projectId: 'calendar-scheduler-b05de',
-    storageBucket: 'calendar-scheduler-b05de.appspot.com',
-    iosBundleId: 'com.example.calendarScheduler',
+    삭제
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyB0aoiYqUGcHXj4QL4g4QfdL7MeqCvJM4g',
-    appId: '1:1048971246583:ios:a13038a3111411855a0cf2',
-    messagingSenderId: '1048971246583',
-    projectId: 'calendar-scheduler-b05de',
-    storageBucket: 'calendar-scheduler-b05de.appspot.com',
-    iosBundleId: 'com.example.calendarScheduler',
+   삭제
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAVpTyHHXkjaQ9fPDrUihMT-_BkKbfBHlI',
-    appId: '1:1048971246583:web:d7633ba4c32a21265a0cf2',
-    messagingSenderId: '1048971246583',
-    projectId: 'calendar-scheduler-b05de',
-    authDomain: 'calendar-scheduler-b05de.firebaseapp.com',
-    storageBucket: 'calendar-scheduler-b05de.appspot.com',
-    measurementId: 'G-FL7YM2MZ7P',
+    삭제
   );
 }
