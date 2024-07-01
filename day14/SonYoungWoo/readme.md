@@ -3,9 +3,6 @@
 ### table_caledar 플러그인
 - 특정날짜 선택, 기간 선택,날짜지정하기 등 기능
  
-### 사전준비
-- 구글 클라우드 콘솔에서 Youtube data api v3 활성화.
- 
 ### pubspec.yaml 설정
 table_calendar: 3.0.9
 intl: 0.18.1
