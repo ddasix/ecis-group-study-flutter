@@ -2,7 +2,7 @@
 ## 사전지식
 ### 상태 관리 (state management)
 - StatefulWidget의 setState() 함수를 이용한 상태관리
-
+![poster](./day16/SonYoungWoo/image1.png)
 - 상태관리 플러그인 (BloC,GetX,RiverPod) Provider로 상태관리 
 
 
