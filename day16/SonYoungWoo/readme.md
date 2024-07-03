@@ -2,9 +2,9 @@
 ## 사전지식
 ### 상태 관리 (state management)
 - StatefulWidget의 setState() 함수를 이용한 상태관리
-![poster](./day16/SonYoungWoo/image1.png)
+![poster](./image1.PNG)
 - 상태관리 플러그인 (BloC,GetX,RiverPod) Provider로 상태관리 
-
+![poster](./image2.PNG)
 
 ### 캐시와 긍정적 응답
 - 기존에 기억하던 데이터를 보여주는 기능
@@ -16,7 +16,7 @@
 - www.nodejs.org 에서 Node.js 파일 설치
 - 터미널에서 node --version, npm install, npm run start:dev 실행
 - http://localhost:3000/api 으로 확인
-
+![poster](./image3.PNG)
 
  
 ## schedule_model 구현
