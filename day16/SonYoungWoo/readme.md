@@ -292,7 +292,7 @@ void main() async {
 
 ## home_screen 구현
 ```dart
-import 'package:calendar_schedule/component/today_banner.dart';
+ import 'package:calendar_schedule/component/today_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:calendar_schedule/component/main_calendar.dart';
 import 'package:calendar_schedule/const/colors.dart';
@@ -324,6 +324,7 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
 
     //프로바이더 변경이 있으면 다시 build 함수 실행
+    //provider 패키지를 불러와야함.
     final provier = context.watch<ScheduleProvider>();
     final selectDate = provier.selectedDate;
     final schedules = provier.cache[selectedDate] ?? [];
@@ -336,7 +337,7 @@ class HomeScreen extends StatelessWidget{
               context: context,
               isScrollControlled: true,
               builder: (_)=>ScheduleBottomSheet(
-                selectedDate: selectedDate,
+                selectedDate: selectDate,
               ),//bottomsheet
              isDismissible: true //배경선택시 닫기
           );
@@ -348,7 +349,7 @@ class HomeScreen extends StatelessWidget{
             child: Column(
               children: [
                 MainCalendar(
-                  selectedDate: selectedDate,
+                  selectedDate: selectDate,
                   onDaySelected: (selectDate, focusedDate) => onDaySelected(selectDate,focusedDate,context),
                 ),
                 SizedBox(height: 8,),
@@ -360,7 +361,7 @@ class HomeScreen extends StatelessWidget{
                           selectedDate: selectedDate,
                           count: snapshot.data?.length ?? 0);
                     }),*/
-                TodayBanner(selectedDate: selectedDate, count: schedules.length),
+                TodayBanner(selectedDate: selectDate, count: schedules.length),
                 SizedBox(height: 8,),
                 /*
                 Expanded(
@@ -440,4 +441,4 @@ class HomeScreen extends StatelessWidget{
 
 }
 ```
-##
+ 
