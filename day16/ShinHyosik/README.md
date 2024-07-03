@@ -30,3 +30,15 @@
 ## 실습
 
 ### `node.js` 설치 및 실행하기
+
+### Errors
+
+1. **ProviderNotFound Exception**
+![alt text](image-1.png)
+
+2. **랜더링이 진행중 또 다른 랜더링이 필요한 액션을 했을 때**
+![alt text](image-2.png)
+![alt text](image-4.png)
+
+3. **랜더링이 진행중 테마가 변경 되었을 때**(부모 위젯이 랜더링 되기 전에 modal을 실행할때도 발생 함.)
+![alt text](image-3.png)
