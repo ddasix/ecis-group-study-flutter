@@ -144,6 +144,7 @@ class ScheduleProvider extends ChangeNotifier {
     DateTime.now().day
   );
 
+
   Map<DateTime, List<ScheduleModel>> cache = {}; //일정 정보 저장
 
  ScheduleProvider({
@@ -156,7 +157,7 @@ class ScheduleProvider extends ChangeNotifier {
  void getSchdules({required DateTime date}) async {
    final resp = await repository.getSchedules(date: date);
 
-   cache.update(date,(v)=> resp, ifAbsent:() => resp);
+   cache.update(date,(v)=> resp, ifAbsent: ()=> resp);
 
    notifyListeners(); //참조하는 모든 위젯들의 bulid 함수 재실행
  }
@@ -165,15 +166,14 @@ class ScheduleProvider extends ChangeNotifier {
  void createSchduels({
     required ScheduleModel schedule,
 }) async {
-   final targetDate = schedule.date;
 
-   final saveSchdule = await repository.createSchedule(schedule: schedule);
+   final targetDate = schedule.date;
 
    final uuid = Uuid();
    final tempId = uuid.v4();
    final newSchedule = schedule.copyWith(id: tempId,);
 
-
+   //서버에서 응답받기 전 캐시를 먼저 업데이트
    cache.update(
        targetDate,
        (v)=> [
@@ -183,18 +183,27 @@ class ScheduleProvider extends ChangeNotifier {
    ifAbsent: () => [newSchedule],
    );
 
+   //업데이트 반영
    notifyListeners();
 
    try{
 
      final savedSchedule = await repository.createSchedule(schedule: schedule);
 
+     //실제 서버에서 받아온 후 업데이트
      cache.update(
          targetDate,
          (v)=>v.map((e)=> e.id == tempId ? e.copyWith(id: savedSchedule,):e).toList(),);
    }catch(e) {
 
+     //실패하면 캐시에서 삭제
+    cache.update(targetDate,
+        (v)=> v.where((e)=>e.id!=tempId).toList(),
+    );
+
    }
+   //업데이트 반영
+   notifyListeners();
  }
 
  //일정 삭제
@@ -203,12 +212,33 @@ class ScheduleProvider extends ChangeNotifier {
     required String id,
 }) async {
 
-   final resp = await repository.deleteSchedule(id: id);
+   //삭제할 일정 기억
+   final targetSchedule = cache[date]!.firstWhere((e)=>e.id == id);
 
+   //캐시에서 미리 삭제
    cache.update(
-       date,
-       (v) => v.where((e) => e.id != id).toList(),
-      ifAbsent: () => [],);
+     date,
+         (v) => v.where((e) => e.id != id).toList(),
+     ifAbsent: () => [],);
+
+   //캐시 업데이트
+   notifyListeners();
+
+   try{
+     //서버에서 삭제
+     await repository.deleteSchedule(id: id);
+   }
+   catch(e){
+     //삭제 실패시
+     cache.update(date,
+         (v)=>[...v,targetSchedule]..sort((a,b)=> a.startTime.compareTo(b.startTime,
+         ),
+         ),
+     );
+   }
+
+         //캐시 업데이트
+         notifyListeners();
 
  }
 
@@ -222,7 +252,6 @@ class ScheduleProvider extends ChangeNotifier {
 
 }
 ```
-##
 
 ## main 구현
 ```dart
