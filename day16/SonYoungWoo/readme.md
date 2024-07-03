@@ -74,7 +74,7 @@ class ScheduleModel {
 
 ```
 
-## schedule_model 구현
+## schedule_repository 구현
 ```dart
 import 'dart:async';
 import 'dart:io';
