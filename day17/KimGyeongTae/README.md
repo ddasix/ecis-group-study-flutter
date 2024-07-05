@@ -99,6 +99,7 @@
 - DefaultFirebaseOption.currentPlatform
   - /lib/firebase_option.dart 에 설정된 값을 플러터 프로젝트에 설정
 
+- /lib/main.dart
 ```dart
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
