@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD6dxlV2lg7yHD7b7nEqRAW0qLMUFga3jE',
+    apiKey: '',
     appId: '1:332159017395:android:2e7763fb258cd33ea56bc6',
     messagingSenderId: '332159017395',
     projectId: 'calendar-schedule-60d19',
@@ -58,7 +58,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDc6Xl6Bd_fM0qmhQeT31m90u3ETnStiEA',
+    apiKey: '',
     appId: '1:332159017395:ios:54ce053d6b9ef7d0a56bc6',
     messagingSenderId: '332159017395',
     projectId: 'calendar-schedule-60d19',
