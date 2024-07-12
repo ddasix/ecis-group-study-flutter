@@ -139,3 +139,6 @@
 - ScheduleRepository 에서 각 함수에 보내는 HTTP 요청의 헤더에 토큰을 포함
 - schedule_provider 에서 accessToken 프로퍼티 주입
 - home_screen 을 stateful 로 바꾸고 로그인 시 오늘 날짜를 기본으로 선택
+- 엑세스 토큰 만료되면 401 에러 발생
+
+![alt text](image-3.png)
