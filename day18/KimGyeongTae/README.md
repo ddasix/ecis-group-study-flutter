@@ -37,3 +37,5 @@
 - 발급 주체 : 서버가 사용자 인증에 성공하면, Access Token 과 Refresh Token 을 모두 발급한다
 - 유효성 검증 : 서버는 Access Token 과 Refresh Token 을 각각 검증하며 사용자의 인증과 권한을 확인한다
 
+
+
