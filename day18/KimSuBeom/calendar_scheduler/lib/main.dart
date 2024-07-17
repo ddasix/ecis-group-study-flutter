@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => scheduleProvider,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'calendar scheduler',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
